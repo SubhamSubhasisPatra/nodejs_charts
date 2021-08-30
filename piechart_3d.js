@@ -1,4 +1,8 @@
-(async function() {
+require('easy-profiler')
+var task = EP.begin('Generate_Pie_chart_report');
+let printInConsoleRightNow = true;
+
+async function generatePieChart() {
     const d3 = Object.assign({}, await import("d3"));
     // console.log(d3);
     const jsdom = require("jsdom");
@@ -15,7 +19,6 @@ var w = 600;
 var h = 30;
 var r = h/2;
 
-console.log("3D Chart")
 
 var data=[
 	{label:"MacOS",value:230, color:"#3366CC"},
@@ -125,8 +128,12 @@ function getPercent(d){
 
 
 // draw("quotesDonut", data, 250, 150, 130, 90, 30, 0, svg)
-console.log(body.html())
+// console.log(body.html())
 fs.writeFileSync("3d_pie_chart.svg", body.html());
+task.end(printInConsoleRightNow);
+EP.report(true);
+// return body.html();
 
+}
 
-})()
+generatePieChart()
