@@ -212,11 +212,12 @@ async function generateBarChart3D(){
         });
         
 
-fs.writeFileSync("barchChart.svg", body.html());
+// fs.writeFileSync("barchChart.svg", body.html());
 // console.log(body.html());
-
+return body.html()
 
 }
 
 
-generateBarChart3D();
+// generateBarChart3D();
+exports.generateBarChart3D = generateBarChart3D;

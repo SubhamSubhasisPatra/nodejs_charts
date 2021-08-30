@@ -1,0 +1,4 @@
+loadtest -n 100 -c 10 --rps 20 "http://localhost:3000/"
+
+npm i -g loadtest
+npm i -g pm2 
