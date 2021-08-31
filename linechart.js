@@ -1,4 +1,8 @@
-(async function () {
+require('easy-profiler')
+var task = EP.begin('Generate_Pie_chart_report');
+let printInConsoleRightNow = true;
+
+async function generateLineChart() {
   const d3 = Object.assign({}, await import("d3"));
   // console.log(d3);
   const jsdom = require("jsdom");
@@ -84,5 +88,9 @@
 
   fs.writeFileSync("liner_graph.svg", body.html());
   console.log(body.html());
+  task.end(printInConsoleRightNow);
+  EP.report(true);
   //   return body.html();
-})();
+}
+
+generateLineChart();
