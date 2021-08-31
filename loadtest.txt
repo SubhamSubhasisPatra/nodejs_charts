@@ -2,3 +2,13 @@ loadtest -n 100 -c 10 --rps 20 "http://localhost:3000/"
 
 npm i -g loadtest
 npm i -g pm2 
+pm2 link h9g03hqbfhhha4x 2srhfwqzdszr4wb
+pm2 start server.js
+
+For PM2 
+
+1 - pm2 start ecosystem.config.js ( in one tab of terminal)
+2 - pm2 monit ( to mitor the app )
+3 - pm2 list ( list the running processes)
+4 - pm2 stop all 
+5 - pm2 delete all 
