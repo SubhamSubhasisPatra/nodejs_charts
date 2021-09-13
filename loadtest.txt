@@ -12,3 +12,5 @@ For PM2
 3 - pm2 list ( list the running processes)
 4 - pm2 stop all 
 5 - pm2 delete all 
+
+Also check the 2D and 3D charts 
